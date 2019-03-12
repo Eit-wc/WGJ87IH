@@ -10,7 +10,7 @@ public class HallwayRandom : MonoBehaviour
     public Vector3 doorInit1, doorInit2, doorInit3, doorInit4;
     void Start()
     {
-       // doorInit1 = doorControl[0].transform.position;
+        doorInit1 = doorControl[0].transform.position;
         doorInit2 = doorControl[1].transform.position;
         doorInit3 = doorControl[2].transform.position;
         doorInit4 = doorControl[3].transform.position;

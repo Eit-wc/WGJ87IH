@@ -14,15 +14,17 @@ public class HallwayRandom : MonoBehaviour
         doorInit2 = doorControl[1].transform.position;
         doorInit3 = doorControl[2].transform.position;
         doorInit4 = doorControl[3].transform.position;
+        if(Global.Lhallway == null)
+        {
+            Global.Lhallway = new List<HallwayRandom>();
+        }
+        Global.Lhallway.Add(this);
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void action()
     {
-        if (Input.GetKeyDown("o"))
-        {
-            int max = 0;
+        int max = 0;
             doorControl[0].transform.position = doorInit1;
             doorControl[1].transform.position = doorInit2;
             doorControl[2].transform.position = doorInit3;
@@ -59,6 +61,14 @@ public class HallwayRandom : MonoBehaviour
                     break;
                // }
             }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("o"))
+        {
+            this.action();
         }
     }
 }

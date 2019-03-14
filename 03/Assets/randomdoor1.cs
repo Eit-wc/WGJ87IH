@@ -57,7 +57,7 @@ public class randomdoor1 : MonoBehaviour
                     doorControl[3].transform.position = doorControl[3].transform.position + new Vector3(0, -5, 0);
                     max++;
                 }
-                  if (max > 1)
+                  if (max == 2 || max ==3)
                    {
                       break;
                    }

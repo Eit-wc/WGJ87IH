@@ -56,10 +56,10 @@ public class HallwayRandom : MonoBehaviour
                     doorControl[3].transform.position = doorControl[3].transform.position + new Vector3(0, -5, 0);
                     max++;
                 }
-                //if (max > 2)
-               // {
+                if (max <4)
+                {
                     break;
-               // }
+                }
             }
     }
 

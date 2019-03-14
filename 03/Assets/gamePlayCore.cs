@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 
 public class gamePlayCore : MonoBehaviour
@@ -30,6 +31,12 @@ public class gamePlayCore : MonoBehaviour
     void Start()
     {
 
+        Scene LevelScene = SceneManager.GetSceneByName("JakScene");
+        if(!LevelScene.isLoaded)
+        {
+            SceneManager.LoadScene("JakScene",LoadSceneMode.Additive);
+        }
+
         Random.seed = (int)System.DateTime.Now.Ticks;
         navPath = new NavMeshPath();
         
@@ -41,7 +48,7 @@ public class gamePlayCore : MonoBehaviour
             item.gameObject.active = false;
         }
 
-        startObject.GetComponent<Rigidbody>().MovePosition(startVecList[Random.Range(0,startVecList.Count)]);
+        startObject.transform.position = startVecList[Random.Range(0,startVecList.Count)];
         navAgent = startObject.GetComponent<NavMeshAgent>();
 
         //checl all end point

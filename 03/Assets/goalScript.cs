@@ -10,9 +10,8 @@ public class goalScript : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    private void OnCollisionEnter(Collision other) {
+    
+    private void OnTriggerEnter(Collider other) {
         Debug.Log("enter");
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
@@ -26,4 +25,8 @@ public class goalScript : MonoBehaviour
             SceneManager.LoadScene("JakScene",LoadSceneMode.Additive);
         }
     }
+    // Update is called once per frame
+    //private void OnCollisionEnter(Collision other) {
+        
+    //}
 }
